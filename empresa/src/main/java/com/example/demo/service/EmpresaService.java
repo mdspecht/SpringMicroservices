@@ -43,9 +43,8 @@ public class EmpresaService {
         oldEmpresa.setNomeFantasia(empresa.getNomeFantasia());
         oldEmpresa.setIe(empresa.getIe());
         oldEmpresa.setTelefone(empresa.getTelefone());
+        oldEmpresa.setEmail(empresa.getEmail());
         oldEmpresa.setSite(empresa.getSite());
-        oldEmpresa.setVendidoPor(empresa.getVendidoPor());
-        oldEmpresa.setDescontoAte(empresa.getDescontoAte());
 
         Endereco oldEndereco = oldEmpresa.getEndereco();
         oldEndereco.setLogradouro(empresa.getEndereco().getLogradouro());

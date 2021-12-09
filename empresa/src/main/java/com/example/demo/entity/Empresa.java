@@ -25,29 +25,23 @@ public class Empresa implements Serializable {
     private String nomeFantasia;
     @Column(length = 14, nullable = false, unique = true)
     private String cnpj;
-    @Column(length = 255)
+    @Column(length = 255) //***
     private String ie;
-    @Column(length = 255)
+    @Column(length = 255) //***
     private String telefone;
     @Column(length = 255)
+    private String email;
+    @Column(length = 255)
     private String site;
-    @Column(length = 255)
-    private String vendidoPor;
-    @Column(length = 255)
-    private String descontoAte;
 
     @Column(nullable = false)
     private Boolean indAtivo = true;
-    @Column(nullable = false)
-    private Boolean indPausado = false;
-
-    @UpdateTimestamp
-    private Date dataAlteracao;
 
     @OneToOne
     private Endereco endereco;
 
-    private String email;
+    @UpdateTimestamp
+    private Date dataAlteracao;
 
     public Empresa(EmpresaDTO empresaDTO) {
         this.setRazaoSocial(empresaDTO.getRazaoSocial());
@@ -55,9 +49,8 @@ public class Empresa implements Serializable {
         this.setCnpj(empresaDTO.getCnpj());
         this.setIe(empresaDTO.getIe());
         this.setTelefone(empresaDTO.getTelefone());
+        this.setEmail(empresaDTO.getEmail());
         this.setSite(empresaDTO.getSite());
-        this.setVendidoPor(empresaDTO.getVendidoPor());
-        this.setDescontoAte(empresaDTO.getDescontoAte());
         setEndereco(new Endereco(empresaDTO.getEndereco()));
     }
 }

@@ -20,13 +20,11 @@ public class EmpresaDTO {
     @CNPJ(message = "Formato de CNPJ inválido")
     private String cnpj;
     private String ie;
-//    @NotBlank
-//    @Email(message = "Formato de email inválido")
-//    private String email;
+    @NotBlank
+    @Email(message = "Formato de email inválido")
+    private String email;
     private String telefone;
     private String site;
-    private String vendidoPor;
-    private String descontoAte;
 
     private EnderecoDTO endereco;
 }

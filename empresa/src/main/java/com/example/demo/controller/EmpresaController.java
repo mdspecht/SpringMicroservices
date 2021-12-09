@@ -49,8 +49,7 @@ public class EmpresaController {
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@PathVariable("id") Long id,
                                     @RequestBody @Valid EmpresaDTO empresaDTO) {
-        System.out.println(id);
-        System.out.println(new Empresa(empresaDTO).toString());
+        
         Empresa empresa = this.empresaService.update(id, new Empresa(empresaDTO));
         return new ResponseEntity<>("empresa", HttpStatus.OK);
     }
