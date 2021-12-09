@@ -37,7 +37,7 @@ public class Empresa implements Serializable {
     @Column(nullable = false)
     private Boolean indAtivo = true;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     private Endereco endereco;
 
     @UpdateTimestamp
