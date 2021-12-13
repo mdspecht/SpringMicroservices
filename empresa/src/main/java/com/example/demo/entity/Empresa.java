@@ -46,9 +46,9 @@ public class Empresa implements Serializable {
     public Empresa(EmpresaDTO empresaDTO) {
         this.setRazaoSocial(empresaDTO.getRazaoSocial());
         this.setNomeFantasia(empresaDTO.getNomeFantasia());
-        this.setCnpj(empresaDTO.getCnpj());
+        this.setCnpj(empresaDTO.getCnpj().replaceAll("[^0-9]", ""));
         this.setIe(empresaDTO.getIe());
-        this.setTelefone(empresaDTO.getTelefone());
+        this.setTelefone(empresaDTO.getTelefone().replaceAll("[^0-9]", ""));
         this.setEmail(empresaDTO.getEmail());
         this.setSite(empresaDTO.getSite());
         setEndereco(new Endereco(empresaDTO.getEndereco()));
