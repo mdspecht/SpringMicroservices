@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.client.UsuarioClient;
 import com.example.demo.dto.EmpresaDTO;
 import com.example.demo.dto.PageDTO;
 import com.example.demo.entity.Empresa;
@@ -13,12 +14,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Api(value = "API REST")
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/empresas")
 public class EmpresaController {
 
     @Autowired
@@ -52,5 +51,14 @@ public class EmpresaController {
 
         Empresa empresa = this.empresaService.update(id, new Empresa(empresaDTO));
         return new ResponseEntity<>("empresa", HttpStatus.OK);
+    }
+
+    @Autowired
+    private UsuarioClient client;
+
+    @GetMapping("/teste")
+    public ResponseEntity teste() {
+        String teste = client.getTeste();
+        return new ResponseEntity(teste, HttpStatus.OK);
     }
 }
