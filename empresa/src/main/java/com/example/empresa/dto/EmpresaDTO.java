@@ -1,6 +1,5 @@
-package com.example.demo.dto;
+package com.example.empresa.dto;
 
-import com.example.demo.entity.Empresa;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CNPJ;

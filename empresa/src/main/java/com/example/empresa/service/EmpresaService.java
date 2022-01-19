@@ -1,9 +1,9 @@
-package com.example.demo.service;
+package com.example.empresa.service;
 
-import com.example.demo.dto.PageDTO;
-import com.example.demo.entity.Empresa;
-import com.example.demo.entity.Endereco;
-import com.example.demo.repository.EmpresaRepository;
+import com.example.empresa.dto.PageDTO;
+import com.example.empresa.entity.Empresa;
+import com.example.empresa.entity.Endereco;
+import com.example.empresa.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

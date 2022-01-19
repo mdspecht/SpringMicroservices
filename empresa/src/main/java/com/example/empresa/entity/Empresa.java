@@ -1,6 +1,6 @@
-package com.example.demo.entity;
+package com.example.empresa.entity;
 
-import com.example.demo.dto.EmpresaDTO;
+import com.example.empresa.dto.EmpresaDTO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;

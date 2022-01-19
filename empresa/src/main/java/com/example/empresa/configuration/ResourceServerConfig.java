@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.empresa.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;

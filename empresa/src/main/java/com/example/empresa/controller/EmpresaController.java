@@ -1,10 +1,10 @@
-package com.example.demo.controller;
+package com.example.empresa.controller;
 
-import com.example.demo.client.UsuarioClient;
-import com.example.demo.dto.EmpresaDTO;
-import com.example.demo.dto.PageDTO;
-import com.example.demo.entity.Empresa;
-import com.example.demo.service.EmpresaService;
+import com.example.empresa.client.UsuarioClient;
+import com.example.empresa.dto.EmpresaDTO;
+import com.example.empresa.dto.PageDTO;
+import com.example.empresa.entity.Empresa;
+import com.example.empresa.service.EmpresaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class EmpresaController {
 
     @ApiOperation(value = "Retorna uma empresa pelo id")
     @GetMapping("/{id}")
-    @RolesAllowed({"admin"})
+    @RolesAllowed({"user"})
     public ResponseEntity<?> findById(@PathVariable("id") Long id) {
         Empresa empresa = this.empresaService.findById(id);
         return new ResponseEntity<>(empresa, HttpStatus.OK);
