@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 
 @Api(value = "API REST")
@@ -32,6 +33,7 @@ public class EmpresaController {
 
     @ApiOperation(value = "Retorna uma empresa pelo id")
     @GetMapping("/{id}")
+    @RolesAllowed({"admin"})
     public ResponseEntity<?> findById(@PathVariable("id") Long id) {
         Empresa empresa = this.empresaService.findById(id);
         return new ResponseEntity<>(empresa, HttpStatus.OK);
