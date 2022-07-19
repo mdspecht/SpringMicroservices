@@ -1,12 +1,12 @@
 package com.example.empresa.service;
 
-import com.example.empresa.dto.PageDTO;
 import com.example.empresa.entity.Empresa;
 import com.example.empresa.entity.Endereco;
 import com.example.empresa.repository.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,8 +19,8 @@ public class EmpresaService {
     private EmpresaRepository empresaRepository;
 
     @Transactional(readOnly = true)
-    public Page<Empresa> findAll(PageDTO pageDTO) {
-        PageRequest pageRequest = PageRequest.of(pageDTO.getPage(), pageDTO.getSize());
+    public Page<Empresa> findAll(Pageable page) {
+        PageRequest pageRequest = PageRequest.of(page.getPageNumber(), page.getPageSize());
         Page<Empresa> empresas = this.empresaRepository.findAll(pageRequest);
         return empresas;
     }
