@@ -1,12 +1,9 @@
 server:
-  port: '8081'
+  port: 8081
 spring:
-  profiles:
-    active: default
+  application:
+    name: empresa
   config:
     import: optional:configserver:http://localhost:8888
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8080/auth/realms/TestRealm/protocol/openid-connect/certs
+  profiles:
+    active: dev

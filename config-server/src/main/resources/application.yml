@@ -3,11 +3,16 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
   cloud:
     config:
       server:
         native:
-          searchLocations: c:\Users\mds_s\Documents\src\pessoal\SpringMicroservices\config
+          searchLocations: C:\Users\mds_s\Documents\src\SpringMicroservices\config
+  profiles:
+    active: native
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/auth/realms/TestRealm/protocol/openid-connect/certs
 

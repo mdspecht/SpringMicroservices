@@ -14,7 +14,7 @@
 	<name>empresa</name>
 	<description>Serviço de empresa do projeto de microsserviços</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 		<spring-cloud.version>2021.0.0-RC1</spring-cloud.version>
 	</properties>
 	<dependencies>
